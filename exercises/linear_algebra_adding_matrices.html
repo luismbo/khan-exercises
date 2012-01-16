@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html data-require="math sylvester linear-algebra">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Adding matrices</title>
+	<script src="../khan-exercise.js"></script>
+</head>
+<body>
+	<div class="exercise">
+		<!-- Main idea: generate two random matrices A and B of random sizes.
+		     Ask for the one of the elements in A + B. -->
+
+		<div class="vars">
+			<var id="M">randRange( 1, 5 )</var>
+			<var id="N">randRange( 1, 5 )</var>
+			<var id="A">randMatrix( M, N, 0, 10 )</var>
+			<var id="B">randMatrix( M, N, 0, 10 )</var>
+			<var id="C">A.add( B )</var>
+			<var id="I">randRange( 1, M )</var>
+			<var id="J">randRange( 1, N )</var>
+		</div>
+
+		<div class="problems">
+			<div id="matrix-addition">
+				<p class="problem">
+					Let <code>\mathbf{A} = <var>texifyMatrix( A )</var></code>,
+					<code>\mathbf{B} = <var>texifyMatrix( B )</var></code>,
+					and <code>\mathbf{C} = \mathbf{A} + \mathbf{B}</code>.
+				</p>
+				<p class="question">What is <code>c_{<var>I</var>,<var>J</var>}</code>?</p>
+				<p class="solution"><var>C.e( I, J )</var></p>
+			</div>
+		</div>
+
+		<div class="hints">
+			<p>
+				<code>\mathbf{C} = \begin{bmatrix}
+					c_{1,1} &amp; c_{1, 2} &amp; c_{1, 3} &amp; \dotsb \\
+					c_{2,1} &amp; c_{2, 2} &amp; c_{2, 3} &amp; \dotsb \\
+					c_{3,1} &amp; c_{3, 2} &amp; c_{3, 3} &amp; \dotsb \\
+					\dotsb &amp; \dotsb &amp; \dotsb &amp; \ddots
+					\end{bmatrix}
+				</code>
+			</p>
+
+			<p><code>\mathbf{C} = <var>texifyMatrix( C )</var></code></p>
+		</div>
+	</div>
+</body>
+</html>
