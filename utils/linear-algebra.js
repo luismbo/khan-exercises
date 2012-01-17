@@ -10,13 +10,19 @@ jQuery.extend(KhanUtil, {
 	},
 
 	texifyMatrix: function( A ) {
-		var m = A.rows(), n = A.cols();
 		var tex = "\\begin{bmatrix}\n";
 
+		var m = A.rows(), n = A.cols();
 		for (var i = 1; i <= m; i++)
 			for (var j = 1; j <= n; j++)
 				tex += A.e( i , j ) + (j === n ? " \\\\\n" : " &amp; ");
 
 		return tex + "\\end{bmatrix}";
+	},
+
+	texifyVector: function ( vector, isRowVector ) {
+		var mat = Matrix.create(vector);
+		return KhanUtil.texifyMatrix(isRowVector ? mat.transpose() : mat);
 	}
+
 });

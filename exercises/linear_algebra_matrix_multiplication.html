@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html data-require="math math-format sylvester linear-algebra">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Matrix multiplication</title>
+	<script src="../khan-exercise.js"></script>
+</head>
+<body>
+	<div class="exercise">
+		<div class="vars">
+			<var id="M">randRange( 2, 3 )</var>
+			<var id="R">randRange( 2, 3 )</var>
+			<var id="N">randRange( 2, 3 )</var>
+			<var id="A">randMatrix( M, R, 0, 10 )</var>
+			<var id="B">randMatrix( R, N, 0, 10 )</var>
+			<var id="C">A.multiply( B )</var>
+			<var id="I">randRange( 1, M )</var>
+			<var id="J">randRange( 1, N )</var>
+		</div>
+
+		<div class="problems">
+			<div id="matrix-multiplication">
+				<p class="problem">
+					Let <code>\mathbf{A} = <var>texifyMatrix( A )</var></code>,
+					<code>\mathbf{B} = <var>texifyMatrix( B )</var></code>,
+					and <code>\mathbf{C} = \mathbf{AB}</code>.
+				</p>
+				<p class="question">What is the value of <code>c_{<var>I</var>,<var>J</var>}</code>?</p>
+				<p class="solution"><var>C.e( I, J )</var></p>
+			</div>
+		</div>
+
+		<div class="hints">
+			<div>
+				<p>
+					Each element <code>c_{i,j}</code> in matrix <code>\mathbf{C} = \mathbf{AB}</code> is obtained
+					by multiplying the corresponding elements of row <code>i</code> of <code>\mathbf{A}</code> and
+					column <code>j</code> of <code>\mathbf{B}</code> and adding the products.
+				</p>
+			</div>
+			<p>
+				In this concrete problem,
+				<code>
+					c_{<var>I</var>,<var>J</var>} =
+					<var>texifyVector( A.row( I ), true )</var>
+					<var>texifyVector( B.col( J ), false )</var>
+				</code>.
+			</p>
+			<p><code>c_{<var>I</var>,<var>J</var>} = <var>C.e( I, J )</var>.</code></p>
+		</div>
+	</div>
+</body>
+</html>
