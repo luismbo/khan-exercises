@@ -298,6 +298,18 @@ jQuery.extend(KhanUtil, {
 		return card.charAt(0).toUpperCase() + card.slice(1);
 	},
 
+	abbreviatedOrdinal: function ( n ) {
+		if ( n < 0 )
+			Khan.error( "negative ordinals are undefined." );
+
+		switch ( n % 10 ) {
+			case 1: return n + 'st';
+			case 2: return n + 'nd';
+			case 3: return n + 'rd';
+			default: return n + 'th';
+		}
+	},
+
 	// Depends on expressions.js for expression formatting
 	// Returns a string with the expression for the formatted roots of the quadratic
 	// with coefficients a, b, c

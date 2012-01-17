@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-require="math sylvester linear-algebra">
+<html data-require="math math-format sylvester linear-algebra">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Adding matrices</title>
@@ -27,23 +27,42 @@
 					<code>\mathbf{B} = <var>texifyMatrix( B )</var></code>,
 					and <code>\mathbf{C} = \mathbf{A} + \mathbf{B}</code>.
 				</p>
-				<p class="question">What is <code>c_{<var>I</var>,<var>J</var>}</code>?</p>
+				<p class="question">What is the value of <code>c_{<var>I</var>,<var>J</var>}</code>?</p>
 				<p class="solution"><var>C.e( I, J )</var></p>
 			</div>
 		</div>
 
 		<div class="hints">
-			<p>
-				<code>\mathbf{C} = \begin{bmatrix}
-					c_{1,1} &amp; c_{1, 2} &amp; c_{1, 3} &amp; \dotsb \\
-					c_{2,1} &amp; c_{2, 2} &amp; c_{2, 3} &amp; \dotsb \\
-					c_{3,1} &amp; c_{3, 2} &amp; c_{3, 3} &amp; \dotsb \\
-					\dotsb &amp; \dotsb &amp; \dotsb &amp; \ddots
-					\end{bmatrix}
-				</code>
-			</p>
+			<div>
+				<p>
+					A matrix is a rectangular array of numbers. The element in row <code>i</code>, column
+					<code>j</code> of some matrix <code>\mathbf{A}</code> is denoted <code>a_{i,j}</code>:
+				</p>
 
-			<p><code>\mathbf{C} = <var>texifyMatrix( C )</var></code></p>
+				<div style="text-align: center">
+					<code>\mathbf{A} = \begin{bmatrix}
+						a_{1,1} &amp; a_{1, 2} &amp; a_{1, 3} &amp; \dotsb \\
+						a_{2,1} &amp; a_{2, 2} &amp; a_{2, 3} &amp; \dotsb \\
+						a_{3,1} &amp; a_{3, 2} &amp; a_{3, 3} &amp; \dotsb \\
+						\dotsb &amp; \dotsb &amp; \dotsb &amp; \ddots
+						\end{bmatrix}
+					</code>
+				</div>
+			</div>
+			<div>
+				<p>
+					Each element in matrix <code>\mathbf{C} = \mathbf{A} + \mathbf{B}</code> is obtained by adding the
+					corresponding elements of matrices <code>\mathbf{A}</code> and <code>\mathbf{B}</code>:
+				</p>
+				<div style="text-align: center">
+					<code>c_{i,j} = a_{i,j} + b_{i,j}</code>
+				</div>
+			</div>
+			<p>In this concrete problem, <code>\mathbf{C} = <var>texifyMatrix( C )</var></code>.</p>
+			<p>
+				<code>c_{<var>I</var>,<var>J</var>}</code> is the element located in the
+				<var>abbreviatedOrdinal( I )</var> row and <var>abbreviatedOrdinal( J )</var> column of matrix
+				<code>\mathbf{C}</code> and its value is <code><var>C.e( I, J )</var></code>.</p>
 		</div>
 	</div>
 </body>
