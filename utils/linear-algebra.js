@@ -1,4 +1,5 @@
-// FIXME: this module depends on sylvester.js. That should be explicit.
+// FIXME: this module depends on sylvester.js. That should be explicit here and
+// perhaps implicit in code that requires this file.
 jQuery.extend(KhanUtil, {
 
 	// Computes a random matrix of size m by n, with random elements varying
@@ -9,7 +10,8 @@ jQuery.extend(KhanUtil, {
 		});
 	},
 
-	texifyMatrix: function( A ) {
+	// Returns TeX code to represent matrix A, an instance of type Matrix.
+	matrixTeX: function( A ) {
 		var tex = "\\begin{bmatrix}\n";
 
 		var m = A.rows(), n = A.cols();
@@ -20,9 +22,13 @@ jQuery.extend(KhanUtil, {
 		return tex + "\\end{bmatrix}";
 	},
 
-	texifyVector: function ( vector, isRowVector ) {
+	// Returns TeX code to represent vector, an instance of type Vector. If
+	// isRowVector is true, the vector is represented as a row vector
+	// (horizontally), otherwise it is represented as a column vector
+	// (vertically).
+	matrixTeX: function ( vector, isRowVector ) {
 		var mat = Matrix.create(vector);
-		return KhanUtil.texifyMatrix(isRowVector ? mat.transpose() : mat);
+		return KhanUtil.matrixTeX(isRowVector ? mat.transpose() : mat);
 	}
 
 });

@@ -21,8 +21,8 @@
 		<div class="problems">
 			<div id="matrix-multiplication">
 				<p class="problem">
-					Let <code>\mathbf{A} = <var>texifyMatrix( A )</var></code>,
-					<code>\mathbf{B} = <var>texifyMatrix( B )</var></code>,
+					Let <code>\mathbf{A} = <var>matrixTeX( A )</var></code>,
+					<code>\mathbf{B} = <var>matrixTeX( B )</var></code>,
 					and <code>\mathbf{C} = \mathbf{AB}</code>.
 				</p>
 				<p class="question">What is the value of <code>c_{<var>I</var>,<var>J</var>}</code>?</p>
@@ -42,8 +42,8 @@
 				In this concrete problem,
 				<code>
 					c_{<var>I</var>,<var>J</var>} =
-					<var>texifyVector( A.row( I ), true )</var>
-					<var>texifyVector( B.col( J ), false )</var>
+					<var>vectorTeX( A.row( I ), true )</var>
+					<var>vectorTeX( B.col( J ), false )</var>
 				</code>.
 			</p>
 			<p><code>c_{<var>I</var>,<var>J</var>} = <var>C.e( I, J )</var>.</code></p>
