@@ -277,7 +277,8 @@ var Khan = (function() {
 			"derivative-intuition": [ "jquery.mobile.vmouse" ],
 			"unit-circle": [ "jquery.mobile.vmouse" ],
 			"interactive": [ "jquery.mobile.vmouse" ],
-			"mean-and-median": [ "stat" ]
+			"mean-and-median": [ "stat" ],
+			"linear-algebra": [ "math", "math-format", "sylvester" ]
 		},
 
 		warnTimeout: function() {

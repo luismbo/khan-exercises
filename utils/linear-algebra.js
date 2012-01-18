@@ -1,5 +1,3 @@
-// FIXME: this module depends on sylvester.js and math-format.js. That should
-// be explicit here and perhaps implicit in code that requires this file.
 jQuery.extend(KhanUtil, {
 
 	// Computes a random matrix of size m by n, with random elements varying
