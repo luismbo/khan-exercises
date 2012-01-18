@@ -60,15 +60,20 @@
 				<p>In this concrete problem,</p>
 				<div style="text-align: center">
 					<code>
-						\mathbf{C} = \mathbf{A} + \mathbf{B} = <var>matrixTeX( A )</var> +
-						<var>matrixTeX( B )</var> = <var>matrixTeX( C )</var>
-					</code>.
+						\begin{split}
+						\mathbf{C} &amp; = \mathbf{A} + \mathbf{B} \\
+						           &amp; = <var>matrixTeX( A )</var> + <var>matrixTeX( B )</var> \\
+						           &amp; = <var>displayMatrixAddition( A, B )</var> \\
+						           &amp; = <var>matrixTeX( C )</var>.
+						\end{split}
+					</code>
 				</div>
 			</div>
 			<p>
 				<code>c_{<var>I</var>,<var>J</var>}</code> is the element located in the
 				<var>abbreviatedOrdinal( I )</var> row and <var>abbreviatedOrdinal( J )</var> column of matrix
-				<code>\mathbf{C}</code> and its value is <code><var>C.e( I, J )</var></code>.</p>
+				<code>\mathbf{C}</code> and its value is <code><var>C.e( I, J )</var></code>.
+			</p>
 		</div>
 	</div>
 </body>
