@@ -45,6 +45,21 @@ jQuery.extend(KhanUtil, {
 		return KhanUtil.mapMatrixToTex( A, function( i, j ) {
 			return A.e( i, j ) + " + " + B.e( i, j );
 		});
+	},
+
+	// Returns TeX code displaying the element-by-element expansion of the dot
+	// product between u and v.
+	displayDotProduct: function( u, v ) {
+		Khan.assert( u.dimensions() === v.dimensions(), "u and v should have the same number of dimensions." );
+		var d = u.dimensions();
+		var tex = "";
+		for ( var i = 1; i <= d; i++ ) {
+			tex += u.e( i ) + " \\times " + v.e( i );
+			if ( i != d ) {
+				tex += " + ";
+			}
+		}
+		return tex;
 	}
 
 });
