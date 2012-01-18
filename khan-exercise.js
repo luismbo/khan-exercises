@@ -444,6 +444,12 @@ var Khan = (function() {
 			}
 		},
 
+		assert: function( bool, msg ) {
+			if ( !bool ) {
+				Khan.error(msg);
+			}
+		},
+
 		scratchpad: (function() {
 			var disabled = false, visible = false, wasVisible, pad;
 
