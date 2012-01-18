@@ -18,12 +18,16 @@ jQuery.extend(KhanUtil, {
 		return [ n, d ];
 	},
 
-	toFractionTex: function( n, dfrac, tolerance ) {
+	toFractionTex: function( n, dfrac, tolerance, signalInFront ) {
 		var f = KhanUtil.toFraction( n, tolerance );
 		if ( f[1] === 1 ) {
 			return f[0];
 		} else {
-			return "\\" + ( dfrac ? "d" : "" ) + "frac{" + f[0] + "}{" + f[1] + "}";
+			return ( signalInFront && f[0] < 0 ? "-" : "" )
+			    + "\\" + ( dfrac ? "d" : "" )
+				+ "frac{"
+				+ ( signalInFront ? Math.abs( f[0] ) : f[0] )
+				+ "}{" + f[1] + "}";
 		}
 	},
 

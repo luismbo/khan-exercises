@@ -34,7 +34,7 @@ jQuery.extend(KhanUtil, {
 	// using rationals etc.
 	displayMatrixWithFractions: function( A ) {
 		return KhanUtil.mapMatrixToTex( A, function( i, j ) {
-			return KhanUtil.toFractionTex( A.e(i, j), 0.001 );
+			return KhanUtil.toFractionTex( A.e(i, j), true, 0.001, true );
 		});
 	},
 

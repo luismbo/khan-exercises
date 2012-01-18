@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-require="math math-format sylvester linear-algebra fractions">
+<html data-require="math math-format sylvester linear-algebra">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Taking the inverse of a 2x2 matrix</title>
@@ -10,6 +10,7 @@
 	<div class="vars">
 		<var id="A" data-ensure="!A.isSingular()">randMatrix( 2, 2, 0, 5 )</var>
 		<var id="INV">A.inverse()</var>
+		<var id="DET">A.e(1, 1) * A.e(2, 2) - A.e(1, 2) * A.e(2, 1)</var>
 	</div>
 
 	<div class="problems">
@@ -56,7 +57,7 @@
 					                &amp; = \frac{1}{<var>A.e(1, 1)</var> \times <var>A.e(2, 2)</var>
 					                                 - <var>A.e(1, 2)</var> \times <var>A.e(2, 1)</var>}
 					                        <var>matrixTeX( intermediateInverseMatrix2x2(A) )</var> \\
-					                &amp; = \frac{1}{<var>A.e(1, 1) * A.e(2, 2) - A.e(1, 2) * A.e(2, 1)</var>}
+					                &amp; = <var>DET &lt; 0 ? "-" : ""</var> \frac{1}{<var>Math.abs(DET)</var>}
 					                        <var>matrixTeX( intermediateInverseMatrix2x2(A) )</var> \\
 					                &amp; = <var>displayMatrixWithFractions( INV )</var>.
 					\end{align}
