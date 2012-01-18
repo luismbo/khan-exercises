@@ -18,8 +18,8 @@ jQuery.extend(KhanUtil, {
 		return [ n, d ];
 	},
 
-	toFractionTex: function( n, dfrac ) {
-		var f = KhanUtil.toFraction( n );
+	toFractionTex: function( n, dfrac, tolerance ) {
+		var f = KhanUtil.toFraction( n, tolerance );
 		if ( f[1] === 1 ) {
 			return f[0];
 		} else {

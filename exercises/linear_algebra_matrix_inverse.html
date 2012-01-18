@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html data-require="math math-format sylvester linear-algebra fractions">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Taking the inverse of a 2x2 matrix</title>
+	<script src="../khan-exercise.js"></script>
+</head>
+<body>
+<div class="exercise">
+	<div class="vars">
+		<var id="A" data-ensure="!A.isSingular()">randMatrix( 2, 2, 0, 5 )</var>
+		<var id="INV">A.inverse()</var>
+	</div>
+
+	<div class="problems">
+		<div id="matrix-inversion">
+			<p class="problem">Let <code>\mathbf{A} = <var>matrixTeX( A )</var></code>.</p>
+			<p class="question">Determine <code>\mathbf{A}^{-1}</code>.</p>
+			<p class="solution"><code>\mathbf{A}^{-1} = <var>displayMatrixWithFractions( INV )</var></code></p>
+			<ul class="choices" data-show="4" data-none="true">
+				<li><code>\mathbf{A}^{-1} = <var>displayMatrixWithFractions( INV )</var></code></li>
+				<li><code>\mathbf{A}^{-1} = <var>matrixTeX( randMatrix(2, 2, 0, 10) )</var></code></li>
+				<li><code>\mathbf{A}^{-1} = <var>matrixTeX( randMatrix(2, 2, 0, 10) )</var></code></li>
+				<li><code>\mathbf{A}^{-1} = <var>matrixTeX( randMatrix(2, 2, 0, 10) )</var></code></li>
+				<!-- <li><code>\mathbf{A}</code> is not invertible.</li> -->
+			</ul>
+		</div>
+	</div>
+
+	<div class="hints">
+		<div>
+			<p>The inverse of a <code>2 \times 2</code> matrix <code>\mathbf{A} = \begin{bmatrix}
+				a &amp; b \\
+			    c &amp; d
+			\end{bmatrix}</code> can be determined as follows:</p>
+			
+			<div style="text-align: center">
+				<code>
+					\mathbf{A}^{-1} = \frac{1}{\det \mathbf{A}} \begin{bmatrix}
+					d &amp; -b \\
+					-c &amp; a
+					\end{bmatrix} = \frac{1}{ad - bc} \begin{bmatrix}
+					d &amp; -b \\
+					-c &amp; a
+					\end{bmatrix}
+				</code>
+			</div>
+		</div>
+		<div>
+			<p>In this concrete example,</p>
+			<div style="text-align: center">
+				<code>
+					\begin{align}
+					\mathbf{A}^{-1} &amp; = \frac{1}{\det \mathbf{A}}
+					                        <var>matrixTeX( intermediateInverseMatrix2x2(A) )</var> \\
+					                &amp; = \frac{1}{<var>A.e(1, 1)</var> \times <var>A.e(2, 2)</var>
+					                                 - <var>A.e(1, 2)</var> \times <var>A.e(2, 1)</var>}
+					                        <var>matrixTeX( intermediateInverseMatrix2x2(A) )</var> \\
+					                &amp; = \frac{1}{<var>A.e(1, 1) * A.e(2, 2) - A.e(1, 2) * A.e(2, 1)</var>}
+					                        <var>matrixTeX( intermediateInverseMatrix2x2(A) )</var> \\
+					                &amp; = <var>displayMatrixWithFractions( INV )</var>.
+					\end{align}
+				</code>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
